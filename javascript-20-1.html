@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      function createTabMenu(tabNames, tabContents) {
+        if (Array.isArray(tabNames) && Array.isArray(tabContents)) {
+          tabNames.filter((element) => {
+            if (typeof element !== "string") {
+              console.error(
+                "createTabMenu의 첫번째 인자는 문자열 배열이어야 합니다."
+              );
+            }
+          });
+
+          tabContents.filter((element) => {
+            if (typeof element !== "string") {
+              console.error(
+                "createTabMenu의 두번째 인자는 문자열 배열이어야 합니다."
+              );
+            }
+          });
+        } else {
+          console.error(
+            "createTabMenu에서 요구하는 두개의 인자는 모두 배열이어야 합니다."
+          );
+        }
+      }
+    </script>
+  </body>
+</html>
